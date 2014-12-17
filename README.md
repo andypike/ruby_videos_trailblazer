@@ -1,6 +1,8 @@
 Ruby Videos
 ===========
 
+[![Codeship Status for andypike/ruby_videos](https://codeship.com/projects/e7d9ad60-681f-0132-46be-42331d97e8e9/status?branch=master)](https://codeship.com/projects/53264)
+
 A curated listing of quality videos about or related to the Ruby programming
 language.
 
