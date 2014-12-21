@@ -21,7 +21,7 @@ RSpec.describe "Authentication" do
     end
 
     context "when user authenticates subsequently" do
-      it "creates a new user" do
+      it "doesn't create another user" do
         create(:user, :provider => "github", :uid => "12345")
         visit root_path
 

@@ -1,13 +1,38 @@
 module Authentication
   class LoginWithOmniAuth < Trailblazer::Operation
+    attr_reader :user
+
     def model
+      user
+    end
+
+    contract do
+      property :uid,        :validates => { :presence => true }
+      property :provider,   :validates => { :presence => true }
+
+      property :info do
+        property :name,     :validates => { :presence => true }
+        property :nickname, :validates => { :presence => true }
+        property :image,    :validates => { :presence => true }
+      end
     end
 
     def process(params)
-      # TODO: Create or load user from params info.
-      #       Thinking that the validation should ensure that we are passed a
-      #       provider, uid and other details within params.
-      self
+      validate(params[:auth], OmniAuthBasics.new) do |auth|
+        load_user_from(auth)
+      end
+    end
+
+    private
+
+    def load_user_from(auth)
+      uid_and_provider = { :uid => auth.uid, :provider => auth.provider }
+
+      @user = User.find_or_create_by(uid_and_provider) do |u|
+        u.name      = auth.info.name
+        u.nickname  = auth.info.nickname
+        u.image_url = auth.info.image
+      end
     end
   end
 end
