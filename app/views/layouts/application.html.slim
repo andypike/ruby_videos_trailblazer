@@ -10,4 +10,10 @@ html
     .container
       .row
         .col-md-12
+          = render "flash"
+      .row
+        .col-md-12
+          p= link_to "Login with GitHub", "/auth/github"
+      .row
+        .col-md-12
           = yield

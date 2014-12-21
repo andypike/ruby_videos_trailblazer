@@ -11,6 +11,8 @@ Setup
 git clone git@github.com:andypike/ruby_videos.git
 cd ruby_videos
 cp config/example.database.yml config/database.yml
+cp example.env .env
+  * Add your development details to .env
 psql postgres
 # create user ruby_videos with password '' CREATEDB;
 # \q
