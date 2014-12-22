@@ -1,9 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Authentication" do
-  describe "Logging in via GitHub" do
-    before { visit root_path }
+  before { visit root_path }
 
+  describe "Logging in via GitHub" do
     it "shows a success message" do
       click_on "Login with GitHub"
 
@@ -27,6 +27,19 @@ RSpec.describe "Authentication" do
           click_on "Login with GitHub"
         }.not_to change(User, :count)
       end
+    end
+  end
+
+  describe "Logging out" do
+    it "allows logged in users to logout" do
+      click_on "Login with GitHub"
+      click_on "Logout"
+
+      expect(page).to have_content(/successfully logged out/i)
+    end
+
+    it "doesn't show the logout link users not logged in" do
+      expect(page).not_to have_link("Logout")
     end
   end
 end
