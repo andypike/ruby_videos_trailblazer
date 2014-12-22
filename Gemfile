@@ -33,3 +33,5 @@ group :development do
   gem "spring"
   gem "spring-commands-rspec"
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
