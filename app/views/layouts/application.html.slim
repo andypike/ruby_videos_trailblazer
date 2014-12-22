@@ -7,16 +7,21 @@ html
     = csrf_meta_tags
 
   body
+    nav class="main-menu" role="navigation"
+      .container
+        ul.nav.navbar-nav
+          - if can? :manage, Video
+            li= link_to "Add Video", new_video_path
+
+          - if current_user.authenticated?
+            li Logged in as #{current_user.nickname}
+          - else
+            li= link_to "Login with GitHub", "/auth/github"
+
     .container
       .row
         .col-md-12
           = render "flash"
-      .row
-        .col-md-12
-          - if current_user.authenticated?
-            p Logged in as #{current_user.nickname}
-          - else
-            p= link_to "Login with GitHub", "/auth/github"
       .row
         .col-md-12
           = yield

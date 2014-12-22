@@ -21,4 +21,5 @@ RSpec.configure do |config|
   config.backtrace_exclusion_patterns << /gems/
   config.order = "random"
   config.include FactoryGirl::Syntax::Methods
+  config.include FeatureHelpers, :type => :feature
 end
