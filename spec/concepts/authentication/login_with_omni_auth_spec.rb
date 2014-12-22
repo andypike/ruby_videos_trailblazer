@@ -75,7 +75,8 @@ RSpec.describe Authentication::LoginWithOmniAuth do
           :provider  => "github",
           :nickname  => "andypike",
           :name      => "Andy Pike",
-          :image_url => "https://avatars.githubusercontent.com/u/117697?v=3"
+          :image_url => "https://avatars.githubusercontent.com/u/117697?v=3",
+          :role      => "viewer"
         )
       end
     end

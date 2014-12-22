@@ -5,5 +5,10 @@ FactoryGirl.define do
     image_url "http://somewhere.com/andy.jpg"
     provider  "github"
     uid       "12345"
+    role      "viewer"
+
+    factory :admin do
+      role "admin"
+    end
   end
 end
