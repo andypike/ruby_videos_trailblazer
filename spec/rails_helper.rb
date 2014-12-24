@@ -5,6 +5,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rspec/rails"
 require "capybara/rails"
 require "capybara/rspec"
+require "cancan/matchers"
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -21,4 +22,5 @@ RSpec.configure do |config|
   config.backtrace_exclusion_patterns << /gems/
   config.order = "random"
   config.include FactoryGirl::Syntax::Methods
+  config.include FeatureHelpers, :type => :feature
 end

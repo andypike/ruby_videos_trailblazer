@@ -17,3 +17,5 @@
 
 database.yml
 .env
+public/uploads
+.DS_Store

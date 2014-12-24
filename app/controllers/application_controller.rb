@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
+  include Trailblazer::Operation::Controller
+
   protect_from_forgery :with => :exception
   helper_method :current_user
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => "Access denied. You do not have permission to do that."
+  end
 
   private
 

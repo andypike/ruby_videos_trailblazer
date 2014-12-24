@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-  include Trailblazer::Operation::Controller
-
   def create
     run Authentication::LoginWithOmniAuth do |op|
       login(op.user)
