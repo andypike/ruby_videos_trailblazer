@@ -1,11 +1,14 @@
 class SessionsController < ApplicationController
-  include Trailblazer::Operation::Controller
-
   def create
     run Authentication::LoginWithOmniAuth do |op|
-      session[:user_id] = op.user.id
+      login(op.user)
       return redirect_to root_path, :notice => "Successfully logged in!"
     end
+  end
+
+  def destroy
+    logout
+    redirect_to root_path, :notice => "Successfully logged out!"
   end
 
   private

@@ -15,6 +15,7 @@ html
 
           - if current_user.authenticated?
             li Logged in as #{current_user.nickname}
+            li= link_to "Logout", session_path, :method => :delete
           - else
             li= link_to "Login with GitHub", "/auth/github"
 

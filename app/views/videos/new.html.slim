@@ -1,0 +1,12 @@
+h1 Add Video
+
+= simple_form_for @form do |f|
+  = f.input :title
+  = f.input :presenter_id, :collection => presenters
+  = f.input :originally_posted_on, :label => "Original date"
+  = f.input :original_url
+  = f.input :host, :collection => hosts
+  = f.input :embed_url
+  = f.input :status, :collection => video_statuses
+  = f.input :thumbnail
+  = f.submit "Save"

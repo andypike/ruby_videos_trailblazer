@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141222105433) do
+ActiveRecord::Schema.define(version: 20141223120137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "presenters", force: true do |t|
+    t.string   "name",       default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "nickname",   default: "", null: false
@@ -29,5 +35,21 @@ ActiveRecord::Schema.define(version: 20141222105433) do
 
   add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
+
+  create_table "videos", force: true do |t|
+    t.string   "title",                default: "", null: false
+    t.integer  "presenter_id",                      null: false
+    t.datetime "originally_posted_on",              null: false
+    t.string   "original_url",         default: "", null: false
+    t.integer  "host",                 default: 0,  null: false
+    t.string   "embed_url",            default: "", null: false
+    t.integer  "status",               default: 0,  null: false
+    t.string   "thumbnail",            default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "videos", ["presenter_id"], name: "index_videos_on_presenter_id", using: :btree
+  add_index "videos", ["status"], name: "index_videos_on_status", using: :btree
 
 end
