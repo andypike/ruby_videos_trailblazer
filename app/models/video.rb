@@ -6,6 +6,6 @@ class Video < ActiveRecord::Base
   enum :status => %i(pending published)
 
   def self.latest
-    published.order(:created_at)
+    published.order(:created_at => :desc)
   end
 end

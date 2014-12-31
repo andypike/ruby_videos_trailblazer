@@ -25,6 +25,7 @@ group :development, :test do
   gem "letter_opener"
   gem "jazz_hands", :github => "nixme/jazz_hands", :branch => "bring-your-own-debugger"
   gem "pry-byebug"
+  gem "rspec-collection_matchers", "~> 1.1.2"
 end
 
 group :development do
