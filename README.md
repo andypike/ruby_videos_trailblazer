@@ -12,6 +12,7 @@ Setup
 -----
 
 ```
+brew install imagemagick
 git clone git@github.com:andypike/ruby_videos.git
 cd ruby_videos
 cp config/example.database.yml config/database.yml

@@ -24,3 +24,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include FeatureHelpers, :type => :feature
 end
+
+def support_file(file_name)
+  File.expand_path("spec/support/files/#{file_name}")
+end

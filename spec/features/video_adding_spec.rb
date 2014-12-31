@@ -9,7 +9,7 @@ RSpec.describe "Adding a video" do
     end
 
     context "with valid data" do
-      let(:thumbnail) { File.expand_path("spec/support/files/thumbnail.png") }
+      let(:thumbnail) { support_file("100x100.gif") }
       let(:video)     { Video.last }
 
       it "allows new videos to be added" do
