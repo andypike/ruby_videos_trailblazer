@@ -14,7 +14,8 @@ gem "omniauth-github", "~> 1.1.2"
 gem "trailblazer", :github => "apotonick/trailblazer"
 gem "cancancan",       "~> 1.9.2"
 gem "simple_form",     "~> 3.1.0"
-gem "carrierwave"
+gem "carrierwave", :github => "carrierwaveuploader/carrierwave"
+gem "mini_magick"
 
 group :development, :test do
   gem "rspec-rails",  "~> 3.1.0"

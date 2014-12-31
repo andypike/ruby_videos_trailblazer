@@ -9,6 +9,16 @@ GIT
       uber (>= 0.0.10)
 
 GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: 56873b07105396e0f1cfdd5e38be930dc3dcd362
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
+
+GIT
   remote: git://github.com/nixme/jazz_hands.git
   revision: 5e4b48f145883ecb14b55bf04eacc28ac9662676
   branch: bring-your-own-debugger
@@ -77,11 +87,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
     codeclimate-test-reporter (0.4.3)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -139,6 +144,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.4.3)
+    mini_magick (4.0.1)
     mini_portile (0.6.1)
     minitest (5.5.0)
     multi_json (1.10.1)
@@ -294,7 +300,7 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.1.0)
   cancancan (~> 1.9.2)
   capybara (~> 2.4.4)
-  carrierwave
+  carrierwave!
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   database_cleaner
@@ -305,6 +311,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   letter_opener
+  mini_magick
   omniauth-github (~> 1.1.2)
   pg
   pry-byebug

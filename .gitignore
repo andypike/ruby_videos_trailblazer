@@ -19,3 +19,4 @@ database.yml
 .env
 public/uploads
 .DS_Store
+spec/support/uploads
