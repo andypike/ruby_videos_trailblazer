@@ -1,3 +1,7 @@
-.video
-  h2= video.title
-  = image_tag video.thumbnail_url
+.mix.video.women.all.col-sm-4
+  .img-wrapper
+    = image_tag video.thumbnail_url, :class => "img-portfolio"
+    .bg-img-portfolio
+    .lightbox-wrapper
+      a.nivoz data-lightbox-gallery="women" href="images/portfolio/1280x800.gif" title=video.title
+        span.glyphicon.glyphicon-play

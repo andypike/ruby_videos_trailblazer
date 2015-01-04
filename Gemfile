@@ -34,7 +34,7 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller", ">= 0.7.2"
   gem "quiet_assets"
-  gem "font_assets"
+  # gem "font_assets"
   gem "spring"
   gem "spring-commands-rspec"
 end
