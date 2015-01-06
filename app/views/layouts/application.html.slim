@@ -22,7 +22,7 @@ html lang="en"
     nav.navbar-inverse.navbar-fixed-top role="navigation"
       .container
         .navbar-header
-          a.scroll-smooth href="#home"
+          = link_to root_path do
             = image_tag "logo.png", :class => "navbar-brand"
 
           - if current_user.authenticated?
@@ -35,14 +35,10 @@ html lang="en"
             span.icon-bar
         .scroll-bootstrap.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
-            li
-              a.scroll-smooth href="#home" Home
-            li
-              a.scroll-smooth href="#latest" Latest
-            li
-              a.scroll-smooth href="#featuring" Featuring
-            li
-              a.scroll-smooth href="#contact" Contact
+            li= smooth_link_to "Home", "home"
+            li= smooth_link_to "Latest", "latest"
+            li= smooth_link_to "Featuring", "featuring"
+            li= smooth_link_to "Contact", "contact"
 
             - if can? :manage, Video
               li= link_to "Add Video", new_video_path

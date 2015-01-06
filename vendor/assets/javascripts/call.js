@@ -13,45 +13,51 @@
  * ============================================================= */
 ////////////// DOCUMENT READY
 $(document).ready(function(){
-// SMOOTH-SCROLL
-$(".scroll-smooth").click(function(event){
-  event.preventDefault();
-  $('html,body').animate({scrollTop:$(this.hash).offset().top}, 700);
-});
-// SLIDER-INTRO
-$('#slider-intro').bxSlider({
-  speed: 250,
-  nextSelector: '#n-intro',
-  prevSelector: '#p-intro',
-  nextText: '<i class="fa fa-chevron-right fa-n"></i>',
-  prevText: '<i class="fa fa-chevron-left fa-p"></i>',
-  auto: true,
-  pager: false
-});
-// SLIDER-IMAC
-$('#slider-imac').bxSlider({
-  speed: 200,
-  nextSelector: '#n-imac',
-  prevSelector: '#p-imac',
-  nextText: '<i class="fa fa-chevron-right fa-n"></i>',
-  prevText: '<i class="fa fa-chevron-left fa-p"></i>',
-  auto: true,
-  pager: false
-});
-// MIXITUP
-  $('#Grid').mixitup();
-// NIVO-LIGHTBOX
-  $('a.nivoz').nivoLightbox({
-  effect: 'slideUp',
 
+  // SMOOTH-SCROLL
+  if($("#home").length > 0) {
+    $(".scroll-smooth").click(function(event){
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top}, 700);
+    });
+  }
+
+  // SLIDER-INTRO
+  $('#slider-intro').bxSlider({
+    speed: 250,
+    nextSelector: '#n-intro',
+    prevSelector: '#p-intro',
+    nextText: '<i class="fa fa-chevron-right fa-n"></i>',
+    prevText: '<i class="fa fa-chevron-left fa-p"></i>',
+    auto: true,
+    pager: false
+  });
+
+  // SLIDER-IMAC
+  $('#slider-imac').bxSlider({
+    speed: 200,
+    nextSelector: '#n-imac',
+    prevSelector: '#p-imac',
+    nextText: '<i class="fa fa-chevron-right fa-n"></i>',
+    prevText: '<i class="fa fa-chevron-left fa-p"></i>',
+    auto: true,
+    pager: false
+  });
+
+  // MIXITUP
+  $('#Grid').mixitup();
+
+  // NIVO-LIGHTBOX
+  $('a.nivoz').nivoLightbox({
+    effect: 'slideUp',
   });
 
   $('a.video').nivoLightbox({
-  errorMessage: 'The requested content cannot be loaded. Please try again later.',
-  effect: 'nonexisent'
+    errorMessage: 'The requested content cannot be loaded. Please try again later.',
+    effect: 'nonexisent'
   });
 
- });
+});
 // END DOCUMENT READY
 
 
