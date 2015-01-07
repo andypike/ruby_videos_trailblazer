@@ -11,5 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
 //= require jquery_ujs
 //= require_tree .
+//= require jquery.bxslider.min
+//= require nivo-lightbox.min
+//= require jquery.mixitup.min
+//= require call
+//= require wow.min

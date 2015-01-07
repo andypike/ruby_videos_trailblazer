@@ -87,6 +87,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    cells (3.11.3)
+      actionpack (>= 3.0)
+      railties (>= 3.0)
+      uber (~> 0.0.8)
     codeclimate-test-reporter (0.4.3)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -121,8 +125,6 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
-    font_assets (0.1.11)
-      rack
     grit (2.0.0)
       diff-lcs (>= 1.1.2)
       mime-types (>= 1.15)
@@ -301,12 +303,12 @@ DEPENDENCIES
   cancancan (~> 1.9.2)
   capybara (~> 2.4.4)
   carrierwave!
+  cells
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   database_cleaner
   dotenv-rails
   factory_girl_rails
-  font_assets
   jazz_hands!
   jquery-rails
   launchy
