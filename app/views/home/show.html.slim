@@ -38,7 +38,8 @@
           li.filter.wow.fadeInRight data-filter="web-design"
             | SECURITY
       #Grid.row
-        = render @latest_videos
+        = concept("video/cell", collection: @latest_videos)
+
         .mix.women.all.col-sm-4
           .img-wrapper
             = image_tag "portfolio/400x300.gif", :class => "img-portfolio"
