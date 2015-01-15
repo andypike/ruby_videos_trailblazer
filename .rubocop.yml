@@ -22,9 +22,11 @@ Style/IndentationWidth:
   Width: 2
 
 Style/SingleSpaceBeforeFirstArg:
-  Enabled: false
+  Exclude:
+    - spec/factories/**/*
+    - spec/features/**/*
 
 Style/FileName:
   Exclude:
-    - **/Gemfile
-    - **/Rakefile
+    - '**/Gemfile'
+    - '**/Rakefile'
