@@ -23,3 +23,8 @@ Style/IndentationWidth:
 
 Style/SingleSpaceBeforeFirstArg:
   Enabled: false
+
+Style/FileName:
+  Exclude:
+    - **/Gemfile
+    - **/Rakefile
