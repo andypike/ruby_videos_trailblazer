@@ -13,9 +13,9 @@ RSpec.describe "Authentication" do
 
     context "when user authenticates for the first time" do
       it "creates a new user" do
-        expect {
+        expect do
           click_on "Login with GitHub"
-        }.to change(User, :count).by(1)
+        end.to change(User, :count).by(1)
       end
     end
 
@@ -23,9 +23,9 @@ RSpec.describe "Authentication" do
       it "doesn't create another user" do
         create(:user, :provider => "github", :uid => "12345")
 
-        expect {
+        expect do
           click_on "Login with GitHub"
-        }.not_to change(User, :count)
+        end.not_to change(User, :count)
       end
     end
   end

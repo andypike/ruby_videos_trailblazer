@@ -3,9 +3,8 @@ class Ability
 
   def initialize(user)
     return unless user.authenticated?
+    return unless user.admin?
 
-    if user.admin?
-      can :manage, :all
-    end
+    can :manage, :all
   end
 end

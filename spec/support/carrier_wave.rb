@@ -13,7 +13,8 @@ CarrierWave::Uploader::Base.descendants.each do |klass|
     end
 
     def store_dir
-      "#{CARRIER_WAVE_UPLOADS}/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+      model_name = model.class.to_s.underscore
+      "#{CARRIER_WAVE_UPLOADS}/#{model_name}/#{mounted_as}/#{model.id}"
     end
   end
 end

@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Adding a video" do
   context "when logged in as an admin" do
     before do
-      create   :presenter
+      create :presenter
       login_as :admin
       click_on "Add Video"
     end
@@ -14,17 +14,18 @@ RSpec.describe "Adding a video" do
 
       it "allows new videos to be added" do
         fill_in "Title",         :with => "A great ruby video"
-        select  "Andy Pike",     :from => "Presenter"
+        select "Andy Pike",      :from => "Presenter"
         fill_in "Original date", :with => "31/01/2014"
         fill_in "Original url",  :with => "http://youtube.com/1234567"
-        select  "You Tube",      :from => "Host"
+        select "You Tube",       :from => "Host"
         fill_in "Embed url",     :with => "http://youtube.com/embed/1234567"
-        select  "Published",     :from => "Status"
+        select "Published",      :from => "Status"
         attach_file "Thumbnail", thumbnail
 
-        expect {
+        expect do
           click_on "Save"
-        }.to change(Video, :count).by(1)
+        end.to change(Video, :count).by(1)
+
         expect(page).to have_content(/successfully added/i)
         expect(video.thumbnail).to be_present
       end
@@ -32,9 +33,9 @@ RSpec.describe "Adding a video" do
 
     context "with invalid data" do
       it "displays errors" do
-        expect {
+        expect do
           click_on "Save"
-        }.not_to change(Video, :count)
+        end.not_to change(Video, :count)
         expect(page).to have_content("can't be blank")
       end
     end

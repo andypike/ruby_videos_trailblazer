@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   end
 
   def create
-    run Video::Create do |op|
+    run Video::Create do
       return redirect_to root_path, :notice => "Successfully added video!"
     end
 

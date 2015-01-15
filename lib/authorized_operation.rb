@@ -26,11 +26,11 @@ module AuthorizedOperation
 
   private
 
-  def authorised_process(params)
+  def authorised_process(_)
     self
   end
 
-  def authorized_present(params)
+  def authorized_present(_)
     self
   end
 

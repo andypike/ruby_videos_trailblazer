@@ -25,7 +25,9 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "launchy"
   gem "letter_opener"
-  gem "jazz_hands", :github => "nixme/jazz_hands", :branch => "bring-your-own-debugger"
+  gem "jazz_hands",
+    :github => "nixme/jazz_hands",
+    :branch => "bring-your-own-debugger"
   gem "pry-byebug"
   gem "rspec-collection_matchers", "~> 1.1.2"
 end
@@ -39,4 +41,4 @@ group :development do
   gem "spring-commands-rspec"
 end
 
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem "codeclimate-test-reporter", :group => :test, :require => nil

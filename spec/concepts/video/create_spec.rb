@@ -51,7 +51,9 @@ RSpec.describe Video::Create do
       before { params[:current_user] = GuestUser.new }
 
       it "does not complete" do
-        expect{ Video::Create.run(params) }.to raise_error(CanCan::AccessDenied)
+        expect do
+          Video::Create.run(params)
+        end.to raise_error(CanCan::AccessDenied)
       end
     end
   end
